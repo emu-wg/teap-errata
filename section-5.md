@@ -115,7 +115,9 @@
       For j = 1 to n-1 do
            IMCK[j] = the first 60 bytes of TLS-PRF(S-IMCK[j-1], 
               "Inner Methods Compound Keys", IMSK[j])
-
+           S-IMCK[j] = first 40 octets of IMCK[j]
+           CMK[j] = last 20 octets of IMCK[j]
+           
       where "|" denotes concatenation and the TLS-PRF is defined in
       [RFC5246] as 
      
@@ -125,10 +127,7 @@
      "Inner Methods Compound Keys" consisting of the ASCII value for the
      label "Inner Methods Compound Keys" (without quotes),  the seed 
      consists IMSK[j]. 
-                
-                
-      S-IMCK[j] = first 40 octets of IMCK[j]
-      CMK[j] = last 20 octets of IMCK[j]
+
 
 
 
