@@ -113,7 +113,7 @@
 
       S-IMCK[0] = session_key_seed
       For j = 1 to n-1 do
-           IMCK[j] = the first 60 bytes of TLS-PRF(S-IMCK[j-1], 
+           IMCK[j] = the first 60 octets of TLS-PRF(S-IMCK[j-1], 
               "Inner Methods Compound Keys", IMSK[j])
            S-IMCK[j] = first 40 octets of IMCK[j]
            CMK[j] = last 20 octets of IMCK[j]
@@ -181,9 +181,9 @@
    MSK and EMSK are generated as part of the IMCKn key hierarchy as
    follows:
 
-      MSK = the first 64 bytes of TLS-PRF(S-IMCK[j], 
+      MSK = the first 64 octets of TLS-PRF(S-IMCK[j], 
            "Session Key Generating Function") 
-      EMSK = the first 64 bytes of TLS-PRF(S-IMCK[j], 
+      EMSK = the first 64 octets of TLS-PRF(S-IMCK[j], 
            "Extended Session Key Generating Function")
 
       where "|" denotes concatenation and the TLS-PRF is defined in
