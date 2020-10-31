@@ -62,6 +62,10 @@
    MSK is truncated at 32 octets if it is longer than 32 octets or
    padded to a length of 32 octets with zeros if it is less than 32
    octets.
+   
+   If no inner EAP authentication method is run then no EMSK or MSK 
+   will be generated.  If an IMSK needs to be generated then the MSK
+   and therefore the IMSK is set to 0 (e.g., MSK = 32 octets of 0x00s). 
 
    However, it's possible that the peer and server sides might not have
    the same capability to export EMSK.  In order to maintain maximum
