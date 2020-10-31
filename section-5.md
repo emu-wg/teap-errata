@@ -62,10 +62,6 @@
    MSK is truncated at 32 octets if it is longer than 32 octets or
    padded to a length of 32 octets with zeros if it is less than 32
    octets.
-   
-   If no inner EAP authentication method is run then no EMSK or MSK 
-   will be generated.  If an IMSK needs to be generated then the MSK
-   and therefore the IMSK is set to 0 (e.g., MSK = 32 octets of 0x00s). 
 
    However, it's possible that the peer and server sides might not have
    the same capability to export EMSK.  In order to maintain maximum
@@ -109,10 +105,14 @@
      policy does not accept MSK-based MAC, then the receiver handles
      like an invalid Crypto-Binding TLV with a fatal error.
 
-   If the ith inner method does not generate an EMSK or MSK, then IMSKi
-   is set to zero (e.g., MSKi = 32 octets of 0x00s).  If an inner method
-   fails, then it is not included in this calculation.  The derivation
-   of S-IMCK is as follows:
+   If no inner EAP authentication method is run then no EMSK or MSK 
+   will be generated (e.g. when basic password authentication
+   is used or when no inner method has been run and the crypto-binding TLV 
+   for the Result-TLV needs to be generated).  In this case, IMSK[j]
+   is set to zero (i.e., MSK = 32 octets of 0x00s).  If an inner method
+   fails, then it is not included in this calculation.  
+   
+   The derivationof S-IMCK is as follows:
 
       S-IMCK[0] = session_key_seed
       For j = 1 to n-1 do
