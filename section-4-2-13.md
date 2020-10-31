@@ -61,9 +61,9 @@
 
       12 - Crypto-Binding TLV
 
-   Length
-
-      76
+   Length       
+   
+      36 plus the length of included MAC fields
 
    Reserved
 
@@ -111,14 +111,12 @@
       value as the request nonce except the least significant bit MUST
       be set to one (1).
 
-   EMSK Compound MAC
+EMSK Compound MAC
 
-      The EMSK Compound MAC field is 20 octets.  This can be the Server
-      MAC (B1_MAC) or the Client MAC (B2_MAC).  The computation of the
-      MAC is described in Section 5.3.
+      The computation of the MAC is described in Section 5.3.  This can be
+      the Server MAC (B1_MAC) or the Client MAC (B2_MAC).  
 
-   MSK Compound MAC
+MSK Compound MAC
 
-      The MSK Compound MAC field is 20 octets.  This can be the Server
-      MAC (B1_MAC) or the Client MAC (B2_MAC).  The computation of the
-      MAC is described in Section 5.3.
+      The computation of the MAC is described in Section 5.3.  This can be
+      the Server MAC (B1_MAC) or the Client MAC (B2_MAC).  
