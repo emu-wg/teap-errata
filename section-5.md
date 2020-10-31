@@ -36,10 +36,13 @@
    the IMCK MUST be recalculated after each successful inner EAP method.
 
    The first step in these calculations is the generation of the base
-   compound key, IMCK[n] from the session_key_seed, and any session keys
-   derived from the successful execution of nth inner EAP methods.  The
-   inner EAP method(s) may provide Inner Method Session Keys (IMSKs),
-   IMSK1..IMSKn, corresponding to inner method 1 through n.
+   compound key, IMCK[j] from the session_key_seed, and any session keys
+   derived from the successful execution of jth inner EAP authentication 
+   methods or basic password authentication. The inner EAP method(s) may 
+   provide Inner Method Session Keys (IMSKs), IMSK1..IMSKn, corresponding
+   to inner method 1 through n.  When the jth exchange, such as a basic 
+   password exchange, does not devrive key material then a special 0 IMSK
+   is used as described below.
 
    If an inner method supports export of an Extended Master Session Key
    (EMSK), then the IMSK SHOULD be derived from the EMSK as defined in
