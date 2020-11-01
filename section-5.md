@@ -36,10 +36,13 @@
    the IMCK MUST be recalculated after each successful inner EAP method.
 
    The first step in these calculations is the generation of the base
-   compound key, IMCK[n] from the session_key_seed, and any session keys
-   derived from the successful execution of nth inner EAP methods.  The
-   inner EAP method(s) may provide Inner Method Session Keys (IMSKs),
-   IMSK1..IMSKn, corresponding to inner method 1 through n.
+   compound key, IMCK[j] from the session_key_seed, and any session keys
+   derived from the successful execution of jth inner EAP authentication 
+   methods or basic password authentication. The inner EAP method(s) may 
+   provide Inner Method Session Keys (IMSKs), IMSK1..IMSKn, corresponding
+   to inner method 1 through n.  When the jth exchange, such as a basic 
+   password exchange, does not derive key material then a special 0 IMSK
+   is used as described below.
 
    If an inner method supports export of an Extended Master Session Key
    (EMSK), then the IMSK SHOULD be derived from the EMSK as defined in
@@ -111,10 +114,14 @@
      policy does not accept MSK-based MAC, then the receiver handles
      like an invalid Crypto-Binding TLV with a fatal error.
 
-   If the ith inner method does not generate an EMSK or MSK, then IMSKi
-   is set to zero (e.g., MSKi = 32 octets of 0x00s).  If an inner method
-   fails, then it is not included in this calculation.  The derivation
-   of S-IMCK is as follows:
+   If no inner EAP authentication method is run then no EMSK or MSK 
+   will be generated (e.g. when basic password authentication
+   is used or when no inner method has been run and the crypto-binding TLV 
+   for the Result-TLV needs to be generated).  In this case, IMSK[j]
+   is set to zero (i.e., MSK = 32 octets of 0x00s).  If an inner method
+   fails, then it is not included in this calculation.  
+   
+   The derivationof S-IMCK is as follows:
 
       S-IMCK[0] = session_key_seed
       For j = 1 to n-1 do
@@ -171,10 +178,10 @@
    Master Session Key (EMSK) output from the EAP method are the result
    of all authentication conversations by generating an Intermediate
    Compound Key (IMCK).  The IMCK is mutually derived by the peer and
-   the server as described in Section 5.2 by combining the MSKs from
-   inner EAP methods with key material from TEAP Phase 1.  The resulting
-   MSK and EMSK are generated as part of the IMCKn key hierarchy as
-   follows:
+   the server as described in Section 5.2 by combining the IMSKs from inner
+   EAP authentication and basic password methods with key material from 
+   TEAP Phase 1.  The resulting MSK and EMSK are generated as part of the 
+   IMCK key hierarchy as follows:
 
       MSK  = TLS-PRF(S-IMCK[j], "Session Key Generating Function", 64)
       EMSK = TLS-PRF(S-IMCK[j],
