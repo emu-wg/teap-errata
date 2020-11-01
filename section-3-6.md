@@ -10,9 +10,9 @@
        in all phases of TEAP.
 
    3.  The Intermediate-Result TLVs carry success or failure indications
-       of the individual EAP methods in TEAP Phase 2.  Errors within the
-       EAP conversation in Phase 2 are expected to be handled by
-       individual EAP methods.
+       of the individual EAP methods and basic password authentication 
+       in TEAP Phase 2.  Errors within the EAP conversation in Phase 2 
+       are expected to be handled by individual EAP methods.
 
    4.  Violations of the Inner TLV rules are handled using Result TLVs
        together with Error TLVs.
