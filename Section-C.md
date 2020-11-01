@@ -44,10 +44,12 @@
        optional additional exchanges (new pin mode,
        password change, etc.) ...
 
-                            <- Crypto-Binding TLV (Request),
+                            <-  Intermediate-Result-TLV (Success),
+                                Crypto-Binding TLV (Request),
                                 Result TLV (Success),
                                 (Optional PAC TLV)
-
+       
+       Intermediate-Result-TLV (Success),
        Crypto-Binding TLV(Response),
        Result TLV (Success),
        (PAC-Acknowledgement TLV) ->
@@ -98,8 +100,10 @@
        Basic-Password-Auth-Resp TLV, Response with both
        username and password) ->
 
-                               <- Result TLV (Failure)
+                               <- Intermediate-Result-TLV (Failure),
+                                  Result TLV (Failure)
 
+       Intermediate-Result-TLV (Failure),
        Result TLV (Failure) ->
 
        TLS channel torn down
