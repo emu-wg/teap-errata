@@ -10,7 +10,7 @@
    final Result TLV exchange, regardless of whether there is an inner
    EAP method authentication or not. It MUST be included with each 
    successful Intermediate-Result TLV to perform cryptographic binding
-   after each EAP authenticaiton or basic password method, before 
+   after each EAP authentication or basic password method, before 
    proceeding with another authentication exchange.  If no MSK or EMSK 
    has been generated and a Crypto-Binding TLS is required then the MSK
    Compound MAC field contains the MAC using keys generated according 
