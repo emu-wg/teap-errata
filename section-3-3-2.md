@@ -11,8 +11,8 @@
    as defined in Section 4.2.15 that contains the username and password.
    If it does not wish to perform password authentication, then it
    responds with a NAK TLV indicating the rejection of the Basic-
-   Password-Auth-Req TLV.  Upon receiving the response, the server
-   indicates the success or failure of the exchange using an
+   Password-Auth-Req TLV.  Upon receiving the response, the server MUST
+   indicate the success or failure of the exchange using an
    Intermediate-Result TLV.  Multiple round trips of password
    authentication requests and responses MAY be used to support some
    "housecleaning" functions such as a password or pin change before a
