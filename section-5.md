@@ -175,10 +175,10 @@
    Master Session Key (EMSK) output from the EAP method are the result
    of all authentication conversations by generating an Intermediate
    Compound Key (IMCK).  The IMCK is mutually derived by the peer and
-   the server as described in Section 5.2 by combining the IMSKs from inner
-   EAP authenticaiton and basic password methods with key material from 
-   TEAP Phase 1.  The resulting MSK and EMSK are generated as part of the 
-   IMCK key hierarchy as follows:
+   the server as described in Section 5.2 by combining the MSKs from
+   inner EAP methods with key material from TEAP Phase 1.  The resulting
+   MSK and EMSK are generated as part of the IMCKn key hierarchy as
+   follows:
 
       MSK  = TLS-PRF(S-IMCK[j], "Session Key Generating Function", 64)
       EMSK = TLS-PRF(S-IMCK[j],
