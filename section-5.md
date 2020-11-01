@@ -41,7 +41,7 @@
    methods or basic password authentication. The inner EAP method(s) may 
    provide Inner Method Session Keys (IMSKs), IMSK1..IMSKn, corresponding
    to inner method 1 through n.  When the jth exchange, such as a basic 
-   password exchange, does not devrive key material then a special 0 IMSK
+   password exchange, does not derive key material then a special 0 IMSK
    is used as described below.
 
    If an inner method supports export of an Extended Master Session Key
