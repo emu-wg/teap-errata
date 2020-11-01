@@ -13,9 +13,10 @@
    using user credentials.
 
    EAP method messages are carried within EAP-Payload TLVs defined in
-   Section 4.2.10.  Upon method completion, the server MUST send an
-   Intermediate-Result TLV indicating the result.  The peer MUST respond
-   to the Intermediate-Result TLV indicating its result.  If the result
+   Section 4.2.10.  Upon completion of an EAP authentication method, the 
+   server MUST send an Intermediate-Result TLV indicating the result.  
+   The peer MUST respond to the Intermediate-Result TLV indicating its 
+   result.  If the result
    indicates success, the Intermediate-Result TLV MUST be accompanied by
    a Crypto-Binding TLV.  The Crypto-Binding TLV is further discussed in
    Sections 4.2.13 and 5.3.  The Intermediate-Result TLVs can be
