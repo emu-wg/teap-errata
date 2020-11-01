@@ -10,7 +10,7 @@
 
    M
 
-      Mandatory, set to one (1)
+      0 (Optional)
 
    R
 
