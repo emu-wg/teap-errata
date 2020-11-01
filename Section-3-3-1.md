@@ -13,8 +13,7 @@
    using user credentials.
 
    EAP method messages are carried within EAP-Payload TLVs defined in
-   Section 4.2.10.  If more than one method is going to be executed in
-   the tunnel, then upon method completion, the server MUST send an
+   Section 4.2.10.  Upon method completion, the server MUST send an
    Intermediate-Result TLV indicating the result.  The peer MUST respond
    to the Intermediate-Result TLV indicating its result.  If the result
    indicates success, the Intermediate-Result TLV MUST be accompanied by
