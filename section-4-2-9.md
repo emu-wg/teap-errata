@@ -69,7 +69,7 @@
    Status
 
       The Status field is one octet.  This indicates the result if the
-      server does not process the action requested by the peer.  Values
+      party who receives this TLV does not process the action.  Values
       include:
 
       1  Success
