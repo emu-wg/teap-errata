@@ -12,7 +12,7 @@
    successful Intermediate-Result TLV to perform cryptographic binding
    after each EAP authentication or basic password method, before 
    proceeding with another authentication exchange.  If no MSK or EMSK 
-   has been generated and a Crypto-Binding TLS is required then the MSK
+   has been generated and a Crypto-Binding TLV is required then the MSK
    Compound MAC field contains the MAC using keys generated according 
    to section 5.2. The Crypto-Binding TLV is valid only if the following 
    checks pass:
