@@ -13,7 +13,7 @@
    responds with a NAK TLV indicating the rejection of the Basic-
    Password-Auth-Req TLV.  Upon receiving the response, the server MUST
    indicate the success or failure of the exchange using an
-   Intermediate-Result TLV.  An Intermediate-Result TLS indicating 
+   Intermediate-Result TLV.  An Intermediate-Result TLV indicating 
    success MUST be accompanied by a Crypto-Binding TLV. Multiple 
    round trips of password
    authentication requests and responses MAY be used to support some
