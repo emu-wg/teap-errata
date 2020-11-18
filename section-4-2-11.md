@@ -1,8 +1,10 @@
 ### 4.2.11.  Intermediate-Result TLV
 
-   The Intermediate-Result TLV provides support for acknowledged
-   intermediate Success and Failure messages between multiple inner EAP
-   methods within EAP.  An Intermediate-Result TLV indicating success
+
+   The Intermediate-Result TLV provides support for acknowledged 
+   intermediate Success and Failure messages for inner EAP 
+   authentication methods and basic password authentication.
+   An Intermediate-Result TLV indicating success
    MUST be accompanied by a Crypto-Binding TLV.  The optional TLVs
    associated with this TLV are provided for future extensibility to
    provide hints about the current result.  The Intermediate-Result TLV
