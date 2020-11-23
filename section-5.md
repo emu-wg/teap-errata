@@ -135,10 +135,10 @@
    the MAC field is filled with zeros.
 
    The Compound MAC computation is as follows:
-  
-       CMK = CMK[j]
-       Compound-MAC = MAC( CMK, BUFFER ) truncated to 20 octets
 
+     CMK = CMK[j]
+     Compound-MAC = MAC( CMK, BUFFER ) truncated to 20 octets
+  
    where j is the number of the last successfully generated IMCK,
    MAC is HMAC [RFC2104] using the hash function negotiated in
    TLS [RFC5246].  If the output of the HMAC is greater than 20 octets,
