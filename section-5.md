@@ -134,16 +134,16 @@
    communications in TEAP.  During the calculation of the Compound MAC,
    the MAC field is filled with zeros.
 
-  The Compound MAC computation is as follows:
-
-      CMK = CMK[j]
-      Compound-MAC = MAC( CMK, BUFFER )
+   The Compound MAC computation is as follows:
+  
+       CMK = CMK[j]
+       Compound-MAC = MAC( CMK, BUFFER ) truncated to 20 octets
 
    where j is the number of the last successfully generated IMCK,
    MAC is HMAC [RFC2104] using the hash function negotiated in
-   TLS [RFC5246].  The output length is the length of the output of the 
-   HMAC function.  The BUFFER is created after concatenating these fields
-   in the following order:
+   TLS [RFC5246].  If the output of the HMAC is greater than 20 octets,
+   then the output is truncated to 20 octets.  The BUFFER is created 
+   after concatenating these fields in the following order:
    
    1  The entire Crypto-Binding TLV attribute with both the EMSK and MSK
       Compound MAC fields zeroed out.
