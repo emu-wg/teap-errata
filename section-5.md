@@ -58,7 +58,7 @@
      TLS handshake [RFC5246].
 
    If an inner method does not support export of an Extended Master
-   Session Key (EMSK), then IMSK is the MSK of the inner method.  The
+   Session Key (EMSK), then the IMSK MUST be derived from the MSK of the inner method.   The
    MSK is truncated at 32 octets if it is longer than 32 octets or
    padded to a length of 32 octets with zeros if it is less than 32
    octets.
