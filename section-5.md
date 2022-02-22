@@ -121,12 +121,11 @@
       where "|" denotes concatenation and the TLS-PRF is defined in
       [RFC5246] as 
      
-        PRF(secret, label, seed) = P_<hash>(secret, label | seed).
+        PRF(secret, label, seed) = P_<hash>(secret, label | seed),
 
-     the secret is S-IMCK[j-1],  the label is 
-     "Inner Methods Compound Keys" consisting of the ASCII value for the
-     label "Inner Methods Compound Keys" (without quotes),  the seed 
-     consists IMSK[j]. 
+      the secret is S-IMCK[j-1],  the label is ASCII value for the
+      text "Inner Methods Compound Keys" without quotes, the seed 
+      consists IMSK[j]. 
 
 
 
